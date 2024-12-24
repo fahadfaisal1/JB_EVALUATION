@@ -670,8 +670,6 @@ if(isset($_POST['export_pdf'])) {
     ];
     generatePDF($data);
 }
-
-// Then add this button right before the closing </div> of your results container
 ?>
 
 

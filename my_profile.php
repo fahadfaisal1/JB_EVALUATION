@@ -1,6 +1,7 @@
 <?php
 session_start();
 require "conn.php";
+require "form_navbar.php";
 
 // Add this right after require "conn.php";
 $check_column = mysqli_query($con, "SHOW COLUMNS FROM users LIKE 'profile_picture'");

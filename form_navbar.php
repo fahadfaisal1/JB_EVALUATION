@@ -19,6 +19,9 @@ $unread_count = getUnreadNotificationsCount($con, $_SESSION['user_id']);
         <a href="index.php" style="text-decoration: none; color: #333; padding: 0 30px; font-size: 14px;">Home</a>
         <a href="form.php" style="text-decoration: none; color: #333; padding: 0 30px; font-size: 14px;">Evaluation Form</a>
         <a href="my_profile.php" style="text-decoration: none; color: #333; padding: 0 30px; font-size: 14px;">My Profile</a>
+        <a href="evaluation_charts.php" class="nav-link">
+    <i class="fas fa-chart-line"></i> Evaluation Trends
+</a>
         <li class="nav-item">
             <a class="nav-link position-relative" href="view_notifications.php">
                 <i class="fas fa-bell"></i>
