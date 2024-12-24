@@ -205,6 +205,49 @@ cm ON d.CM_5 = cm.ID where d.ID = $id;
     color: #2d3748;
     font-size: 1rem;
 }
+
+@media print {
+    /* Hide buttons, forms and header when printing */
+    .btn, 
+    form, 
+    header,
+    .navbar,
+    nav,
+    .header-section {
+        display: none !important;
+    }
+    
+    /* Full width content */
+    .container {
+        width: 100% !important;
+        max-width: none !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    /* Remove shadows and borders */
+    .card {
+        border: none !important;
+        box-shadow: none !important;
+    }
+    
+    /* Better table printing */
+    table {
+        width: 100% !important;
+        page-break-inside: auto !important;
+    }
+    
+    tr {
+        page-break-inside: avoid !important;
+        page-break-after: auto !important;
+    }
+
+    /* Remove any top margins after hiding header */
+    body {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
 </style>
 </head>
           
@@ -217,6 +260,12 @@ cm ON d.CM_5 = cm.ID where d.ID = $id;
                 style="background-color: #e74c3c; color: white; font-weight: 500; padding: 10px 20px; font-size: 16px;">
             <i class="fas fa-file-pdf"></i> Export as PDF
         </button>
+        <button onclick="window.print()" class="btn btn-dark text-white">
+        <i class="fas fa-print"></i> Print
+    </button>
+    <a href="export_excel.php?id=<?php echo $id; ?>" class="btn btn-success">
+        <i class="fas fa-file-excel"></i> Export Excel
+    </a>
     </form>
 </div>
 
@@ -629,18 +678,7 @@ if(isset($_POST['export_pdf'])) {
 <!-- Add Font Awesome in the head section -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-<div class="d-flex gap-2 justify-content-center mt-4">
-    <form method="post" action="">
-        <input type="hidden" name="export_pdf" value="1">
-        <button type="submit" class="btn btn-danger">
-            <i class="fas fa-file-pdf"></i> Export PDF
-        </button>
-    </form>
-    
-    <a href="export_excel.php?id=<?php echo $id; ?>" class="btn btn-success">
-        <i class="fas fa-file-excel"></i> Export Excel
-    </a>
-</div>
+
 
 
 
